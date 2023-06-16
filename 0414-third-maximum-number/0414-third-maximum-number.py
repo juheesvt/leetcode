@@ -1,5 +1,4 @@
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
-        nums = list(set(nums))
-        nums.sort()
+        nums = sorted(list(set(nums)))
         return nums[-3] if len(nums) > 2 else nums[-1]
