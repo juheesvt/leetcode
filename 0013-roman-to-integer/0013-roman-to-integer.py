@@ -7,10 +7,8 @@ class Solution:
         sum = roman_dict[s[0]]
         for i in range(1, len(s)):
             if roman_dict[s[i]] > roman_dict[s[i - 1]]:
-                sum -= roman_dict[s[i - 1]]
-                sum += (roman_dict[s[i]] - roman_dict[s[i - 1]])
+                sum += (roman_dict[s[i]] - 2 * roman_dict[s[i - 1]])
             else:
                 sum += roman_dict[s[i]]
-            print(s[i], sum)
         
         return sum
